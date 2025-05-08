@@ -11,4 +11,4 @@ Streamlit: This application is built with Streamlit. Ensure you have Streamlit i
 Clone this repository or download the source code to your local machine. Navigate to the application directory and install the required Python packages:
 
 ```bash
-pip install -r requirements.txt
+py -m pip install -r requirements.txt
