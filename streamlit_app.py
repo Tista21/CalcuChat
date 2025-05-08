@@ -80,7 +80,7 @@ def main():
     with st.sidebar:
         st.title("Menu:")
         pdf_docs = st.file_uploader("Upload your PDF Files & Click on the Submit Button", accept_multiple_files=True, key="pdf_uploader")
-        if st.button("Submit", key="process_button"):  
+        if st.button("Submit", key="process_button") and api_key: 
             with st.spinner("loading..."):
                 raw_text = get_pdf_text(pdf_docs)
                 text_chunks = get_text_chunks(raw_text)
