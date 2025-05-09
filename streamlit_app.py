@@ -14,7 +14,7 @@ def generate_response(input_text):
   llm = ChatOpenAI(openai_api_key=openai_api_key)
   llm_with_tools = llm.bind_tools([multiply])
   llm_with_tools.invoke('Hi how are you')
-  query = HumanMessage(input_text)
+  query = HumanMessage(content = input_text)
   messages = [query]
   result = llm_with_tools.invoke(messages)
   messages.append(result)
@@ -22,7 +22,9 @@ def generate_response(input_text):
   messages.append(tool_result)
   messages
   text = llm_with_tools.invoke(messages).content
-  st.info(response.content)
+  response = llm([message])
+  content = response.generations[0][0].text
+  st.info(content)
 
 with st.form('my_form'):
   text = st.text_area('Enter text:', 'What multiplication of 2 and 4')
