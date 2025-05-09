@@ -3,7 +3,7 @@ from langchain_openai import ChatOpenAI
 from langchain_core.tools import tool
 from langchain_core.messages import HumanMessage
 import requests
-st.title('CalcuChat')
+st.title('CaLcu Chat')
 openai_api_key = st.sidebar.text_input('OpenAI API Key')
 
 def generate_response(input_text):
