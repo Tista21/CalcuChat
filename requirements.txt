@@ -1,5 +1,3 @@
 streamlit
-langchain-community
-chatopenai
 langchain
-langchain.llm
+langchain-openai
