@@ -21,7 +21,7 @@ def generate_response(input_text):
   tool_result = multiply.invoke(result.tool_calls[0])
   messages.append(tool_result)
   messages
-  text = llm_with_tools.invoke(messages).content
+  text = llm_with_tools.invoke(messages)
   st.info(llm(input_text))
 
 with st.form('my_form'):
