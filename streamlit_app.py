@@ -15,6 +15,7 @@ def generate_response(input_text):
   llm_with_tools = llm.bind_tools([multiply])
   llm_with_tools.invoke('Hi how are you')
   query = HumanMessage(input_text)
+  messages = [query]
   st.info(llm(input_text))
 
 with st.form('my_form'):
@@ -23,7 +24,6 @@ with st.form('my_form'):
   if not openai_api_key.startswith('sk-'):
     st.warning('Please enter your OpenAI API key!', icon='⚠')
   if submitted and openai_api_key.startswith('sk-'):
-    messages = [query]
     result = llm_with_tools.invoke(messages)
     messages.append(result)
     tool_result = multiply.invoke(result.tool_calls[0])
