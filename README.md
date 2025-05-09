@@ -1,11 +1,11 @@
-# PDFchatbot
+# Calcuchat:
 **Features:
-Chatbot based on the context of pdf.
-Extracts and analyses text from uploaded PDF documents.
-Utilizes Google's Generative AI model Gemini-PRO for high-quality, contextually relevant answers.
-Ensure secure entry of Google API keys to access this models.
+Chatbot based on the multiply two number.
+Analyse and calculate two numbers.
+Utilizes OpenAI for high-quality, contextually relevant answers.
+Ensure secure entry of OpenAI API keys to access this models.
 **Required:
-Google API Key :-- Obtain a Google API key to interact with this models. Visit [Google API Key Setup](https://makersuite.google.com/app/apikey) to get your key.
+OpenAI API Key :-- Obtain a OpenAI API key to interact with this models. Visit [Google API Key Setup](https://platform.openai.com/api-keys) to get your key.
 Streamlit: This application is built with Streamlit. Ensure you have Streamlit installed in your environment.
 **Installation:
 Clone this repository or download the source code to your local machine. Navigate to the application directory and install the required Python packages:
