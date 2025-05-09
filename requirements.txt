@@ -2,3 +2,4 @@ streamlit
 langchain-community
 openai
 langchain
+langchain.llm
