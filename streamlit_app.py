@@ -6,7 +6,7 @@ import requests
 st.title('Love Bite Chat')
 openai_api_key = st.sidebar.text_input('OpenAI API Key')
 
-  @tool
+@tool
 def multiply(a: int, b: int) -> int:
   """Given 2 numbers a and b this tool returns their product"""
   return a * b
