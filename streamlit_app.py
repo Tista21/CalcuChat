@@ -22,7 +22,7 @@ def generate_response(input_text):
   messages.append(tool_result)
   messages
   text = llm_with_tools.invoke(messages).content
-  response = llm([message])
+  response = llm([text])
   content = response.generations[0][0].text
   st.info(content)
 
