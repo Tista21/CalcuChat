@@ -12,10 +12,10 @@ def multiply(a: int, b: int) -> int:
   return a * b
 def generate_response(input_text):
   llm = ChatOpenAI(openai_api_key=openai_api_key)
-llm_with_tools = llm.bind_tools([multiply])
-llm_with_tools.invoke('Hi how are you')
-query = HumanMessage(input_text)
-st.info(llm(input_text))
+  llm_with_tools = llm.bind_tools([multiply])
+  llm_with_tools.invoke('Hi how are you')
+  query = HumanMessage(input_text)
+  st.info(llm(input_text))
 
 with st.form('my_form'):
   text = st.text_area('Enter text:', 'What is the capital of india')
@@ -24,10 +24,10 @@ with st.form('my_form'):
     st.warning('Please enter your OpenAI API key!', icon='⚠')
   if submitted and openai_api_key.startswith('sk-'):
     messages = [query]
-result = llm_with_tools.invoke(messages)
-messages.append(result)
-tool_result = multiply.invoke(result.tool_calls[0])
-messages.append(tool_result)
-messages
-text = llm_with_tools.invoke(messages).content
+    result = llm_with_tools.invoke(messages)
+    messages.append(result)
+    tool_result = multiply.invoke(result.tool_calls[0])
+    messages.append(tool_result)
+    messages
+    text = llm_with_tools.invoke(messages).content
     generate_response(text)
