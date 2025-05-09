@@ -15,7 +15,7 @@ def generate_response(input_text):
 llm_with_tools = llm.bind_tools([multiply])
 llm_with_tools.invoke('Hi how are you')
 query = HumanMessage(input_text)
-  st.info(llm(input_text))
+st.info(llm(input_text))
 
 with st.form('my_form'):
   text = st.text_area('Enter text:', 'What is the capital of india')
