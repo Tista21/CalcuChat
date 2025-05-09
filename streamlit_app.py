@@ -1,4 +1,3 @@
-pip install streamlit
 pip install langchain-openai
 import streamlit as st
 from langchain_openai import ChatOpenAI
