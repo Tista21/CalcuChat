@@ -6,11 +6,11 @@ import requests
 st.title('Love Bite Chat')
 openai_api_key = st.sidebar.text_input('OpenAI API Key')
 
-@tool
-def multiply(a: int, b: int) -> int:
-  """Given 2 numbers a and b this tool returns their product"""
-  return a * b
 def generate_response(input_text):
+  @tool
+  def multiply(a: int, b: int) -> int:
+    """Given 2 numbers a and b this tool returns their product"""
+    return a * b
   llm = ChatOpenAI(openai_api_key=openai_api_key)
   llm_with_tools = llm.bind_tools([multiply])
   llm_with_tools.invoke('Hi how are you')
