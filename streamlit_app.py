@@ -1,3 +1,5 @@
+pip install langchain-openai
+
 import streamlit as st
 from langchain_openai import ChatOpenAI
 st.title('Love Bite Chat')
