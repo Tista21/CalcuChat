@@ -22,7 +22,7 @@ def generate_response(input_text):
   messages.append(tool_result)
   messages
   text = llm_with_tools.invoke(messages).content
-  st.info(llm(input_text))
+  st.info(response.content)
 
 with st.form('my_form'):
   text = st.text_area('Enter text:', 'What multiplication of 2 and 4')
