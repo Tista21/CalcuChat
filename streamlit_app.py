@@ -20,7 +20,6 @@ def generate_response(input_text):
   messages.append(result)
   tool_result = multiply.invoke(result.tool_calls[0])
   messages.append(tool_result)
-  messages
   st.info(llm_with_tools.invoke(messages).content)
 
 with st.form('my_form'):
@@ -29,4 +28,4 @@ with st.form('my_form'):
   if not openai_api_key.startswith('sk-'):
     st.warning('Please enter your OpenAI API key!', icon='⚠')
   if submitted and openai_api_key.startswith('sk-'):
-    generate_response()
+    generate_response(text)
